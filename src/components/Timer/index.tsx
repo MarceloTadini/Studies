@@ -10,7 +10,7 @@ const Timer: React.FC = () => {
             <div className={style.relogioWrapper}>
                 <Clock/>
             </div>
-            <Button text="Começar" />
+            <Button type="submit" text="Começar" />
         </div>
     )
 }
