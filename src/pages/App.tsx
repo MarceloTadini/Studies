@@ -18,6 +18,21 @@ function App() {
     })))
   }
 
+  function killTask(){
+    if(selected){
+      setTasks(oldTasks => oldTasks.map(task => {
+        if(task.id === selected.id){
+          return{
+            ...task,
+            isSelected: false,
+            isCompleted: true,
+          }
+        }
+        return task
+      }))
+    }
+  }
+
   return (
     <div className={style.AppStyle}>
       <Form setTasks={setTasks}/>
@@ -25,7 +40,10 @@ function App() {
         tasks={tasks}
         taskSelect={taskSelect}
       />
-      <Timer/>
+      <Timer 
+        selected={selected} 
+        killTask={killTask}
+      />
     </div>
   );
 }

@@ -12,8 +12,8 @@ const Item: React.FC<Props> = ({time, task, isCompleted, isSelected, id, taskSel
    
     return(
         <li 
-          className={`${style.item} ${isSelected ? style.itemSelecionado : ''}`} 
-          onClick={() => taskSelect({
+          className={`${style.item} ${isSelected ? style.itemSelecionado : ''} ${isCompleted ? style.itemCompletado: ''}`} 
+          onClick={() => !isCompleted && taskSelect({
             task,
             time,
             isCompleted,
@@ -22,6 +22,7 @@ const Item: React.FC<Props> = ({time, task, isCompleted, isSelected, id, taskSel
         })}>
             <h2>{task}</h2>
             <span>{time}</span>
+            {isCompleted && <span className={style.concluido} aria-label="tarefa completada"></span>}
         </li>
     )
 }
