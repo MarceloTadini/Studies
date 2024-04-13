@@ -11,7 +11,6 @@
 ##  :video_game: Tecnologias Utilizadas 
 * React;
 * TypeScript;
-* Vite;
 * Bibliotecas do Node Package Manager;
 * Styled-components para estilização;
 
